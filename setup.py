@@ -25,6 +25,7 @@ setup(
         'aleph.crawlers': [
             'rigzone = aleph_crawlers.news.rigzone:RigZoneCrawler',
             'allafrica = aleph_crawlers.news.allafrica:AllAfricaCrawler',
+            'amabhungane = aleph_crawlers.news.amabhungane:AmaBhunganeCrawler',
             'edgar = aleph_crawlers.public.edgar:EdgarCrawler'
         ]
     },
