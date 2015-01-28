@@ -74,7 +74,7 @@ class EdgarCrawler(Crawler):
                 for url, file_data in self.parse_feed(file_path):
                     try:
                         self.check_tag(url=url)
-                        title = u'%s - %s' % (file_data.get('file_file'),
+                        title = u'%s - %s' % (file_data.get('file_description'),
                                               file_data.get('title'))
                         self.emit_url(url, title=title,
                                       summary=file_data.get('file_description'),
