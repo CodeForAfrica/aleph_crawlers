@@ -24,7 +24,8 @@ setup(
     entry_points={
         'aleph.crawlers': [
             'rigzone = aleph_crawlers.news.rigzone:RigZoneCrawler',
-            'allafrica = aleph_crawlers.news.allafrica:AllAfricaCrawler'
+            'allafrica = aleph_crawlers.news.allafrica:AllAfricaCrawler',
+            'edgar = aleph_crawlers.public.edgar:EdgarCrawler'
         ]
     },
     tests_require=[]
