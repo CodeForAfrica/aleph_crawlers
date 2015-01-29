@@ -51,7 +51,8 @@ class SafliiCrawler(Crawler):
             if doc_url in links:
                 continue
             try:
-                self.check_tag(url=doc_url)
-                self.emit_url(doc_url, title=a.text_content().strip())
+                id = self.check_tag(url=doc_url)
+                self.emit_url(doc_url, package_id=id,
+                              title=a.text_content().strip())
             except TagExists:
                 pass

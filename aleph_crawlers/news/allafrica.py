@@ -24,8 +24,8 @@ class AllAfricaCrawler(Crawler):
                 if 'allafrica.com/stories/' not in article_url:
                     continue
                 try:
-                    self.check_tag(url=article_url)
-                    self.emit_url(url, article=True)
+                    id = self.check_tag(url=article_url)
+                    self.emit_url(url, packahe_id=id, article=True)
                 except TagExists:
                     pass
 

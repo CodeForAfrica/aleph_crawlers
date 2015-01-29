@@ -21,7 +21,7 @@ class RigZoneCrawler(Crawler):
         for article_id in xrange(id, 1, -1):
             url = PAGE_URL % article_id
             try:
-                self.check_tag(url=url)
-                self.emit_url(url, article=True)
+                id = self.check_tag(url=url)
+                self.emit_url(url, package_id=id, article=True)
             except TagExists:
                 pass

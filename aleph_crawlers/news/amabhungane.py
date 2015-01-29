@@ -28,8 +28,9 @@ class AmaBhunganeCrawler(Crawler):
                     continue
                 page_articles.add(url)
                 try:
-                    self.check_tag(url=url)
-                    self.emit_url(url, title=text, article=True)
+                    id = self.check_tag(url=url)
+                    self.emit_url(url, package_id=id,
+                                  title=text, article=True)
                 except TagExists:
                     pass
             if not len(page_articles):
