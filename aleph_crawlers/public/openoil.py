@@ -7,18 +7,19 @@ from aleph.crawlers import Crawler, TagExists
 
 log = logging.getLogger(__name__)
 
+NS = '{http://s3.amazonaws.com/doc/2006-03-01/}'
 BUCKET = 'https://s3-eu-west-1.amazonaws.com/downloads.openoil.net/?prefix=contracts/'
 
 
 class OpenOilCrawler(Crawler):
 
-    DEFAULT_LABEL = "OpenOil Repository"
+    DEFAULT_LABEL = "OpenOil"
     DEFAULT_SITE = "http://repository.openoil.net/"
 
     def crawl(self):
         res = requests.get(BUCKET)
         doc = etree.fromstring(res.content)
-        for key in doc.findall('.//Key'):
+        for key in doc.findall('.//%sKey' % NS):
             if key.text.endswith('.zip'):
                 continue
             url = urljoin(BUCKET, key.text)
