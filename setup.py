@@ -27,7 +27,8 @@ setup(
             'allafrica = aleph_crawlers.news.allafrica:AllAfricaCrawler',
             'amabhungane = aleph_crawlers.news.amabhungane:AmaBhunganeCrawler',
             'edgar = aleph_crawlers.public.edgar:EdgarCrawler',
-            'saflii = aleph_crawlers.public.saflii:SafliiCrawler',
+            'openoil = aleph_crawlers.public.openoil:OpenOilCrawler',
+            'saflii = aleph_crawlers.public.saflii:SafliiCrawler'
         ]
     },
     tests_require=[]
