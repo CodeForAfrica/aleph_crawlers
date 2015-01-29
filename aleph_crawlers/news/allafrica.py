@@ -25,7 +25,9 @@ class AllAfricaCrawler(Crawler):
                     continue
                 try:
                     id = self.check_tag(url=article_url)
-                    self.emit_url(url, packahe_id=id, article=True)
+                    title = a.text_content().strip()
+                    self.emit_url(article_url, title=title,
+                                  package_id=id, article=True)
                 except TagExists:
                     pass
 

@@ -20,7 +20,7 @@ class OpenOilCrawler(Crawler):
         res = requests.get(BUCKET)
         doc = etree.fromstring(res.content)
         for key in doc.findall('.//%sKey' % NS):
-            if key.text.endswith('.zip'):
+            if not key.text.endswith('.pdf'):
                 continue
             url = urljoin(BUCKET, key.text)
             try:
