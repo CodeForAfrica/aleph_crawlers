@@ -19,7 +19,7 @@ class AllAfricaCrawler(Crawler):
             url = url_base % i
             res = requests.get(url)
             doc = html.fromstring(res.content)
-            for a in doc.findall('.//a'):
+            for a in doc.findall('.//p[@class="title"]//a'):
                 article_url = urljoin(url, a.get('href', '/'))
                 if 'allafrica.com/stories/' not in article_url:
                     continue
