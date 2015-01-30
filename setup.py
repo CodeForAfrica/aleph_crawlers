@@ -28,6 +28,7 @@ setup(
             'amabhungane = aleph_crawlers.news.amabhungane:AmaBhunganeCrawler',
             'edgar = aleph_crawlers.public.edgar:EdgarCrawler',
             'openoil = aleph_crawlers.public.openoil:OpenOilCrawler',
+            'wbdocs = aleph_crawlers.public.wb_docs:WorldBankDocsCrawler',
             'saflii = aleph_crawlers.public.saflii:SafliiCrawler'
         ]
     },
