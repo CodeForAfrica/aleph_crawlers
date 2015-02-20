@@ -72,7 +72,6 @@ class IFCDocsCrawler(Crawler):
                     aurl = aurl % (docid, attachment)
                     try:
                         aid = self.check_tag(url=aurl)
-                        print "AURL", aurl
                         self.emit_url(aurl, package_id=aid,
                                       meta=data)
                     except TagExists:
