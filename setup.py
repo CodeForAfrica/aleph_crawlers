@@ -30,6 +30,7 @@ setup(
             'edgar = aleph_crawlers.public.edgar:EdgarCrawler',
             'openoil = aleph_crawlers.public.openoil:OpenOilCrawler',
             'wbdocs = aleph_crawlers.public.wb_docs:WorldBankDocsCrawler',
+            'ifcdocs = aleph_crawlers.public.ifc_docs:IFCDocsCrawler',
             'saflii = aleph_crawlers.public.saflii:SafliiCrawler'
         ]
     },
