@@ -16,8 +16,8 @@ INDEX = 'http://ifcext.ifc.org/ifcext/spiwebsite1.nsf/frmshowview?openform&view=
 
 class IFCDocsCrawler(Crawler):
 
-    DEFAULT_LABEL = "IFC Documents"
-    DEFAULT_SITE = "http://ifcextapps.ifc.org/ifcext/spiwebsite1.nsf/$$Search?openform"
+    LABEL = "IFC Documents"
+    SITE = "http://ifcextapps.ifc.org/ifcext/spiwebsite1.nsf/$$Search?openform"
 
     def crawl(self):
         urls = set()

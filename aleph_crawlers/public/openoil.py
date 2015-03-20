@@ -13,8 +13,8 @@ BUCKET = 'https://s3-eu-west-1.amazonaws.com/downloads.openoil.net/?prefix=contr
 
 class OpenOilCrawler(Crawler):
 
-    DEFAULT_LABEL = "OpenOil"
-    DEFAULT_SITE = "http://repository.openoil.net/"
+    LABEL = "OpenOil"
+    SITE = "http://repository.openoil.net/"
 
     def crawl(self):
         res = requests.get(BUCKET)

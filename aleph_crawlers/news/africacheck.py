@@ -14,8 +14,8 @@ BASES = [('http://africacheck.org/how-to-fact-check/factsheets-and-guides/page/%
 
 class AfricaCheckCrawler(Crawler):
 
-    DEFAULT_LABEL = "AfricaCheck"
-    DEFAULT_SITE = "http://africacheck.org/"
+    LABEL = "AfricaCheck"
+    SITE = "http://africacheck.org/"
 
     def crawl(self):
         for (base_url, urlfrag) in BASES:

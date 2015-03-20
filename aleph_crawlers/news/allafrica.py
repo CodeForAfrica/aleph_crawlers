@@ -10,8 +10,8 @@ log = logging.getLogger(__name__)
 
 class AllAfricaCrawler(Crawler):
 
-    DEFAULT_LABEL = "AllAfrica"
-    DEFAULT_SITE = "http://allafrica.com/"
+    LABEL = "AllAfrica"
+    SITE = "http://allafrica.com/"
 
     def crawl(self):
         url_base = 'http://allafrica.com/latest/?page=%s'

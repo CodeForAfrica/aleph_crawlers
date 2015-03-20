@@ -18,8 +18,8 @@ SICS = [1000, 1040, 1090, 1220, 1221,
 
 class EdgarCrawler(Crawler):
 
-    DEFAULT_LABEL = "SEC EDGAR"
-    DEFAULT_SITE = "http://sec.gov"
+    LABEL = "SEC EDGAR"
+    SITE = "http://sec.gov"
 
     def monthly_indexes(self):
         ftp = ftplib.FTP('ftp.sec.gov')

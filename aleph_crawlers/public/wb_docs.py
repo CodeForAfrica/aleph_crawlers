@@ -36,8 +36,8 @@ INDEX_ARGS = {
 
 class WorldBankDocsCrawler(Crawler):
 
-    DEFAULT_LABEL = "WorldBank Documents"
-    DEFAULT_SITE = "http://documents.worldbank.org/"
+    LABEL = "WorldBank Documents"
+    SITE = "http://documents.worldbank.org/"
 
     def crawl_type_list(self):
         res = requests.get(TYPE_LIST)

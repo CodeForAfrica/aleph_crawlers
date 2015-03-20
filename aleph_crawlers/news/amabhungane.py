@@ -12,8 +12,8 @@ INDEX = "http://amabhungane.co.za/archives/index/%s"
 
 class AmaBhunganeCrawler(Crawler):
 
-    DEFAULT_LABEL = "amaBhungane"
-    DEFAULT_SITE = "http://amabhungane.co.za/"
+    LABEL = "amaBhungane"
+    SITE = "http://amabhungane.co.za/"
 
     def crawl(self):
         for i in count(1):
@@ -35,5 +35,3 @@ class AmaBhunganeCrawler(Crawler):
                     pass
             if not len(page_articles):
                 return
-
-        

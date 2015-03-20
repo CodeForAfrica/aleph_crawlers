@@ -21,8 +21,8 @@ def is_year(el):
 
 class SafliiCrawler(Crawler):
 
-    DEFAULT_LABEL = "SAFLII"
-    DEFAULT_SITE = "http://www.saflii.org/"
+    LABEL = "SAFLII"
+    SITE = "http://www.saflii.org/"
 
     def crawl(self):
         res = requests.get(INDEX)
