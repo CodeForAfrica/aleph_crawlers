@@ -1,6 +1,7 @@
 import logging
 import requests
 from urlparse import urljoin
+from normality import slugify
 from lxml import html
 
 from aleph.crawlers import Crawler, TagExists
@@ -91,20 +92,31 @@ class WorldBankDocsCrawler(Crawler):
             label = li.findtext('./label')
             if label is None:
                 continue
-            label = label.replace('.', '').replace('/', '')
-            label = label.replace(' ', '_').lower()
+            label = slugify(label, sep='_')
             value = li.find('./span').xpath('string()')
-            label = label.replace('(s)', '')
-            data[label] = clean(value)
+            if value is None:
+                continue
+            value = value.strip().strip(';')
+
+            if label == 'rel_proj_id':
+                values = value.split(' -- ')
+                value = values[0]
+                if len(values) > 1:
+                    data['project_id'] = values[1]
+
+            if len(value):
+                data[label] = clean(value)
 
         for li in doc.findall('.//ul[@class="documentLnks"]/li'):
             record = data.copy()
             if li.get('class') != 'textdoc':
                 doc_url = li.find('a').get('href')
+                # from pprint import pprint
+                # pprint(record)
                 self.emit_url(doc_url, title=data['title'],
                               summary=data['summary'],
                               meta=record)
-     
+
     def crawl(self):
         doc_type = self.source.config.get('document_type')
         if doc_type is not None:
